@@ -1,0 +1,41 @@
+#header-container {
+  height: 300px;
+  font-size: 130%;
+  margin-top: 20px;
+}
+
+#header-dsc {
+  font-size: 120%;
+}
+
+#header-content-container {
+  padding-top: 70px;
+  float: left;
+  width: 55%;
+}
+
+#header-content {
+  padding-left: 30%;
+}
+
+#profile-container {
+  padding-right: 5%;
+  float: left;
+  width: 35%;
+  opacity: 90%;
+}
+
+@media (max-width: 750px) {
+  #header-content-container {
+    width: 100%;
+  }
+  #header-content {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  #profile-container {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
