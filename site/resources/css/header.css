@@ -26,7 +26,12 @@
 }
 
 @media (max-width: 750px) {
+  #header-container {
+    height: 460px;
+  }
   #header-content-container {
+    padding-top: 0;
+    text-align: center;
     width: 100%;
   }
   #header-content {
@@ -37,5 +42,20 @@
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
+  }
+}
+
+@media (max-width: 556px) {
+  #header-container {
+    height: 540px;
+  }
+  #header-content {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #profile-container {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
