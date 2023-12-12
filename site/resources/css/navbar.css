@@ -1,0 +1,95 @@
+#nav-container {
+  display: block;
+}
+/* Default navbar height */
+.height-fixed {
+  height: 100px;
+}
+/* When menu is active then navbar height switches to auto to fit content */
+.height-auto {
+  height: auto;
+}
+#nav-logo {
+  padding-top: 15px;
+  width: 20%;
+  height: 100px;
+  display: inline;
+  margin-left: 8px;
+}
+#nav-links-container {
+  width: 70%;
+  float: right;
+  text-align: right;
+  margin-right: 8px;
+}
+.nav-link {
+  text-align: center;
+  width: 20%;
+  float: right;
+  padding-top: 15px;
+  margin-right: 2px;
+  text-decoration: none;
+  color: lightgreen;
+}
+.nav-link:hover {
+  background-color: lightgreen;
+  color: white;
+}
+.nav-link:active {
+  color: lightgreen;
+}
+#nav-menu {
+  display: none;
+  border: none;
+  color: lightgreen;
+  background: none;
+  margin-right: 8px;
+}
+#nav-menu-icon {
+  border: solid;
+  border-color: lightgreen;
+  border-width: 2px;
+}
+#nav-menu-icon:hover {
+  color: white;
+  background-color: lightgreen;
+}
+.menu-inactive {
+  display: none;
+}
+.menu-active {
+  display: block;
+}
+#nav-menu-options {
+  /* Centers txt vertically */
+  line-height: 15px;
+  margin-top: 40px;
+  text-align: center;
+}
+.nav-menu-option {
+  display: block;
+  height: 50px;
+  border-top: solid;
+  border-color: lightgreen;
+  border-width: 2px;
+  text-decoration: none;
+  color: black;
+}
+.nav-menu-option:last-child {
+  border-bottom: solid;
+  border-color: lightgreen;
+  border-width: 2px;
+}
+.nav-menu-option:hover {
+  color: white;
+  background-color: lightgreen;
+}
+@media (max-width: 750px) {
+  #nav-links-container {
+    display: none;
+  }
+  #nav-menu {
+    display: block;
+    float: right;
+  }
+}

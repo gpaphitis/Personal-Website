@@ -9,12 +9,14 @@
 }
 
 #header-content-container {
+  /* Place it at the center of the picture */
   padding-top: 70px;
   float: left;
   width: 55%;
 }
 
 #header-content {
+  /* Shift content to the left inside the content container to maintain proper overall width */
   padding-left: 30%;
 }
 
@@ -26,36 +28,28 @@
 }
 
 @media (max-width: 750px) {
+  /* Header container height is automatically set to the height of it's elements */
   #header-container {
-    height: 460px;
-  }
-  #header-content-container {
-    padding-top: 0;
     text-align: center;
+    height: auto;
+  }
+  /* Place elements back in document flow. Helps align next section to the bottom of it */
+  #header-content-container {
+    float: none;
+    padding-top: 0;
     width: 100%;
   }
   #header-content {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 0;
+    padding-right: 0;
   }
   #profile-container {
+    float: none;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media (max-width: 556px) {
-  #header-container {
-    height: 540px;
-  }
-  #header-content {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  #profile-container {
-    width: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
 }
