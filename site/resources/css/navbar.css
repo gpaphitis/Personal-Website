@@ -1,13 +1,12 @@
 #nav-container {
   display: block;
-}
-/* Default navbar height */
-.height-fixed {
   height: 100px;
+  /* Transition for nav height so header transitions slowly down */
+  transition: height 0.2s ease-in;
 }
 /* When menu is active then navbar height switches to auto to fit content */
-.height-auto {
-  height: auto;
+#nav-container.height-auto {
+  height: 200px;
 }
 #nav-logo {
   padding-top: 15px;
@@ -30,13 +29,14 @@
   margin-right: 2px;
   text-decoration: none;
   color: lightgreen;
+  transition: 0.15s ease-in-out;
 }
 .nav-link:hover {
   background-color: lightgreen;
   color: white;
 }
 .nav-link:active {
-  color: lightgreen;
+  background-color: green;
 }
 #nav-menu {
   display: none;
@@ -49,22 +49,35 @@
   border: solid;
   border-color: lightgreen;
   border-width: 2px;
+  /* When anything about its properties changes, i.e. with hover, it will have a transition period of 0.2s */
+  transition: 0.2s ease-in;
 }
 #nav-menu-icon:hover {
   color: white;
   background-color: lightgreen;
 }
-.menu-inactive {
-  display: none;
-}
-.menu-active {
-  display: block;
-}
 #nav-menu-options {
-  /* Centers txt vertically */
+  display: block;
+  /* Hides child elements so they don't appear as clickable */
+  visibility: hidden;
+  /* Centers text vertically */
   line-height: 15px;
   margin-top: 40px;
   text-align: center;
+  height: 0;
+  /* This is needed for transition since there is no transition for visibility */
+  opacity: 0;
+}
+#nav-menu-options.menu-inactive {
+  /* Applies this transition when class changes to inactive */
+  transition: opacity 0.1s ease-in;
+}
+#nav-menu-options.menu-active {
+  /* When transition is applied opacity also changes so the transition is enabled */
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
+  height: auto;
+  visibility: visible;
 }
 .nav-menu-option {
   display: block;
@@ -74,6 +87,7 @@
   border-width: 2px;
   text-decoration: none;
   color: black;
+  transition: 0.12s ease-in;
 }
 .nav-menu-option:last-child {
   border-bottom: solid;
