@@ -1,1 +1,30 @@
-
+.info-block {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 23%;
+  height: 50px;
+  background-color: lightgray;
+}
+#personal-info {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media (min-width: 992px) {
+   .info-block {
+     width: 32%;
+   }
+ }
+ @media ((min-width: 769px) and (max-width:991.99px)) {
+   .info-block {
+     width: 48%;
+   }
+ }
+@media (max-width: 768.99px) {
+  .info-block {
+    width: 100%;
+  }
+}

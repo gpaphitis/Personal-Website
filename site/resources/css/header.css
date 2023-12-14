@@ -27,7 +27,7 @@
   opacity: 90%;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   /* Header container height is automatically set to the height of it's elements */
   #header-container {
     text-align: center;
@@ -49,7 +49,4 @@
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-@media (max-width: 556px) {
 }
