@@ -1,4 +1,8 @@
 #nav-container {
+  /* Padding is used to avoid margin collapse of child elements */
+  padding-top: 1px;
+  /* Negates the 1px padding */
+  margin-top: -1px;
   display: block;
   background-color: lightgray;
   height: 100px;
@@ -10,11 +14,11 @@
   height: 239px;
 }
 #nav-logo {
-  padding-left: 8px;
-  padding-top: 35px;
+  float: left;
   width: 20%;
-  height: 100px;
-  display:inline;
+  /** Remove if picture is used */
+  margin-top: 35px;
+  text-align:center;
 }
 #nav-links-container {
   width: 70%;
@@ -51,7 +55,7 @@
   margin-right: 8px;
 }
 #nav-menu-icon {
-  margin-top:20px;
+  margin-top: 20px;
   border: solid;
   border-color: lightgreen;
   border-width: 2px;
@@ -63,12 +67,12 @@
   background-color: lightgreen;
 }
 #nav-menu-options {
-  display: block;
+  /* display: block; */
   /* Hides child elements so they don't appear as clickable */
   visibility: hidden;
   /* Centers text vertically */
   line-height: 15px;
-  margin-top: 70px;
+  margin-top: 90px;
   text-align: center;
   height: 0;
   /* This is needed for transition since there is no transition for visibility */
