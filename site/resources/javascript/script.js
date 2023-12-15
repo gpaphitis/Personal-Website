@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let resize = () => {
   let docWidth = document.querySelector("body").offsetWidth;
-  console.log(docWidth);
   // 975 and 752 are the values of the body width when window is at 992px and 768px respectively
   if (docWidth >= 975) {
     changeHeightSiblings(3);
@@ -36,6 +35,7 @@ let resize = () => {
 window.addEventListener("resize", resize);
 
 function changeHeightSiblings(n) {
+  deletePreviousStyles();
   let heads = document.querySelectorAll(`.info-block.col-${n}-head`);
   for (let i = 0; i < heads.length; i++) {
     for (let j = 2; j <= n; j++) {
@@ -49,8 +49,16 @@ function changeHeightSiblings(n) {
   }
 }
 
+function deletePreviousStyles() {
+  let previous = document.getElementsByClassName("added-style");
+  while (previous.length > 0) {
+    previous[0].remove();
+  }
+}
+
 function addStyle(css) {
   let el = document.createElement("style");
+  el.classList.add("added-style");
   el.innerText = css;
   document.head.appendChild(el);
 }
