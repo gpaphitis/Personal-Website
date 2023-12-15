@@ -22,7 +22,7 @@
 }
 .info-block-txt {
   margin: 5px;
-  margin-top:10px;
+  margin-top: 10px;
 }
 @media (min-width: 992px) {
   .info-block {
@@ -42,7 +42,7 @@
 }
 @media (max-width: 767.99px) {
   .info-block {
-    width: 100%;
+    width: 97%;
     height: auto;
   }
 }
