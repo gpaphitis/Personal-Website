@@ -36,29 +36,43 @@ window.addEventListener("resize", resize);
 
 function changeHeightSiblings(n) {
   deletePreviousStyles();
-  let heads = document.querySelectorAll(`.info-block.col-${n}-head`);
-  for (let i = 0; i < heads.length; i++) {
-    for (let j = 2; j <= n; j++) {
-      let height = `.info-block:nth-child(${i * n + j}) {height: ${
-        //0.5 is very important. We want it to be slightly bigger because if it is a bit smaller then next element
-        // will clip the edge of the previous one since they are floated i.e. _- next element clips at the underscore
-        heads[i].offsetHeight + 0.5
-      }px;}`;
-      addStyle(height);
+  let blocks = document.querySelectorAll(`.info-block`).length;
+  // Move row by row(i+=n) and adjust height
+  for (let i = 0; i < blocks; i += n) {
+    let height = findBiggestRowHeight(i / n, n);
+
+    // For each block of the row adjust height
+    for (let j = 1; j <= n; j++) {
+      //Element numbering starts from 1
+      let heightCSS = `.info-block:nth-child(${i + j}) {height: ${height}px;}`;
+      addStyle(heightCSS);
     }
   }
 }
-
+//* Finds block with biggest height of the given row
+function findBiggestRowHeight(row, rowLength) {
+  let max = document.querySelector(`.info-block:nth-child(1)`).offsetHeight;
+  for (let i = 2; i <= rowLength; i++) {
+    let currHeight = document.querySelector(
+      `.info-block:nth-child(${row * rowLength + i})`
+    ).offsetHeight;
+    if (max < currHeight) max = currHeight;
+  }
+  return max;
+}
+//* Deletes styles added from previous resizes
 function deletePreviousStyles() {
   let previous = document.getElementsByClassName("added-style");
+  // Length decreases by one so repeatedly remove first element
   while (previous.length > 0) {
     previous[0].remove();
   }
 }
 
+//* Injects given css string as style in head
 function addStyle(css) {
-  let el = document.createElement("style");
-  el.classList.add("added-style");
-  el.innerText = css;
-  document.head.appendChild(el);
+  let element = document.createElement("style");
+  element.classList.add("added-style");
+  element.innerText = css;
+  document.head.appendChild(element);
 }

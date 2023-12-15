@@ -11,9 +11,9 @@
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
-  height: 300px;
+  height: auto;
   width: 23%;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 .info-block-title {
   height: auto;
@@ -28,16 +28,10 @@
   .info-block {
     width: 32%;
   }
-  .info-block.col-3-head {
-    height: auto;
-  }
 }
 @media ((min-width: 768px) and (max-width:991.99px)) {
   .info-block {
     width: 48%;
-  }
-  .info-block.col-2-head {
-    height: auto;
   }
 }
 @media (max-width: 767.99px) {
