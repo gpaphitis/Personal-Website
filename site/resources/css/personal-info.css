@@ -13,7 +13,7 @@
   margin-bottom: 10px;
   height: auto;
   width: 23%;
-  /* background-color: lightgray; */
+  background-color: lightgray;
 }
 .info-block-title {
   height: auto;
@@ -21,8 +21,9 @@
   margin-top: 10px;
 }
 .info-block-txt {
-  margin: 5px;
-  margin-top: 10px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 @media (min-width: 992px) {
   .info-block {
@@ -37,6 +38,7 @@
 @media (max-width: 767.99px) {
   .info-block {
     width: 97%;
+    float:none;
     height: auto;
   }
 }

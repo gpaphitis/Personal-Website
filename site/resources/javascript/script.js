@@ -29,6 +29,9 @@ let resize = () => {
   if (docWidth >= 975) {
     changeHeightSiblings(3);
   } else if (docWidth >= 752) changeHeightSiblings(2);
+  else {
+    deletePreviousStyles();
+  }
 };
 
 // If window is resized then this event will trigger to fix the view
@@ -37,9 +40,12 @@ window.addEventListener("resize", resize);
 function changeHeightSiblings(n) {
   deletePreviousStyles();
   let blocks = document.querySelectorAll(`.info-block`).length;
+  let totalHeightRows = 0;
+
   // Move row by row(i+=n) and adjust height
   for (let i = 0; i < blocks; i += n) {
     let height = findBiggestRowHeight(i / n, n);
+    totalHeightRows += height;
 
     // For each block of the row adjust height
     for (let j = 1; j <= n; j++) {
@@ -48,14 +54,26 @@ function changeHeightSiblings(n) {
       addStyle(heightCSS);
     }
   }
+  totalHeightRows += 30;
+  addStyle(`#personal-info{height:${totalHeightRows + 10}px;}`);
 }
 //* Finds block with biggest height of the given row
 function findBiggestRowHeight(row, rowLength) {
-  let max = document.querySelector(`.info-block:nth-child(1)`).offsetHeight;
+  // Select first of row
+  let max = document.querySelector(
+    `.info-block:nth-child(${row * rowLength + 1})`
+  ).offsetHeight;
   for (let i = 2; i <= rowLength; i++) {
-    let currHeight = document.querySelector(
-      `.info-block:nth-child(${row * rowLength + i})`
-    ).offsetHeight;
+    let currHeight = 0;
+    // Row might not be full so check first
+    if (
+      document.querySelector(`.info-block:nth-child(${row * rowLength + i})`) !=
+      null
+    ) {
+      currHeight = document.querySelector(
+        `.info-block:nth-child(${row * rowLength + i})`
+      ).offsetHeight;
+    }
     if (max < currHeight) max = currHeight;
   }
   return max;
