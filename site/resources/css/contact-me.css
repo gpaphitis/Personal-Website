@@ -1,5 +1,65 @@
-#contact-me{
-   background-color: red;
-   height:200px;
-   width:100%;
+#contact-me {
+  width: 100%;
+  height: 450px;
+  font-size: 20px;
+}
+.contact-block {
+  float: left;
+  background-color: lightgray;
+  margin-left: 10px;
+  height: 450px;
+}
+.contact-block-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+#form-elements {
+  margin: 10px;
+}
+.form-input-header {
+  font-size: 1.2em;
+}
+.form-field:not(:first-child) {
+  margin-top: 20px;
+}
+.form-input {
+  font-size: 0.9em;
+  width: 100%;
+}
+.form-input::placeholder {
+  color: lightgray;
+}
+#form-submit {
+  margin-bottom: 10px;
+  width: 100px;
+  height: 50px;
+  font-size: 0.9em;
+  color: lightgreen;
+  transition: 0.12s ease-out;
+  border: none;
+}
+#form-submit:hover {
+  color: white;
+  background-color: lightgreen;
+}
+#sender-msg {
+  height: 200px;
+  overflow:auto;
+}
+@media (min-width: 768px) {
+  .contact-block {
+    width: 48%;
+  }
+}
+@media (max-width: 767.99px) {
+  .contact-block {
+    width: 97%;
+    float: none;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  #contact-me {
+    height: auto;
+  }
 }
