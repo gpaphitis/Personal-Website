@@ -3,9 +3,8 @@
   width: 100%;
   height: auto;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
+  padding: 10px;
+  padding-bottom: 0;
 }
 .info-block {
   float: left;
@@ -37,8 +36,12 @@
 }
 @media (max-width: 767.99px) {
   .info-block {
-    width: 97%;
-    float:none;
+    width: 100%;
+    float: none;
     height: auto;
+    margin-right:0;
+  }
+  #personal-info {
+    padding: 10px;
   }
 }
