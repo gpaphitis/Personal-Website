@@ -3,17 +3,17 @@
   height: 450px;
   font-size: 20px;
   padding: 10px;
-  margin-top:40px;
+  margin-top: 40px;
 }
 .contact-block {
   /* Avoid margin collapse of title */
-  margin-top:-1px;
-  padding-top:1px;
+  margin-top: -1px;
+  padding-top: 1px;
   float: left;
   background-color: lightgray;
   height: 450px;
 }
-.contact-block:nth-child(2){
+.contact-block:nth-child(2) {
   margin-left: 10px;
 }
 .contact-block-title {
@@ -56,20 +56,22 @@
   /* Message exceeds shown text box */
   overflow: auto;
 }
-.contact-info{
-  margin-left:10px;
+.contact-info {
+  margin-left: 10px;
 }
-.contact-info-block:not(:first-child){
-  margin-top:30px;
+.contact-info-block:not(:first-child) {
+  margin-top: 30px;
 }
-.info-title{
+.info-title {
   font-size: 1.2em;
 }
-.info-link{
-  display:block;
-  text-decoration:none;
-  color:lightgreen;
-  margin-top:5px;
+.info-link {
+  margin-top: 5px;
+}
+a.info-link {
+  display: block;
+  text-decoration: none;
+  color: lightgreen;
 }
 @media (min-width: 768px) {
   .contact-block {
@@ -83,7 +85,7 @@
     height: auto;
     margin-bottom: 10px;
   }
-  .contact-block:nth-child(2){
+  .contact-block:nth-child(2) {
     margin-left: 0;
     margin-left: 0;
   }
