@@ -1,29 +1,55 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("nav-menu").addEventListener("click", function () {
-    if (
-      document
-        .getElementById("nav-menu-options")
-        .classList.contains("menu-inactive")
-    ) {
-      document
-        .getElementById("nav-menu-options")
-        .classList.remove("menu-inactive");
-      document.getElementById("nav-menu-options").classList.add("menu-active");
-      document.getElementById("nav-container").classList.add("height-auto");
-    } else {
-      document
-        .getElementById("nav-menu-options")
-        .classList.remove("menu-active");
-      document
-        .getElementById("nav-menu-options")
-        .classList.add("menu-inactive");
-      document.getElementById("nav-container").classList.remove("height-auto");
-    }
-  });
+  document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   resize();
+  document.getElementById("form-submit").addEventListener("click",sendEmail);
 });
 
-let resize = () => {
+//* Switches current state of nav menu
+function navMenuToggle(){
+  if (
+    document
+      .getElementById("nav-menu-options")
+      .classList.contains("menu-inactive")
+  ) {
+    document
+      .getElementById("nav-menu-options")
+      .classList.remove("menu-inactive");
+    document.getElementById("nav-menu-options").classList.add("menu-active");
+    document.getElementById("nav-container").classList.add("height-auto");
+  } else {
+    document
+      .getElementById("nav-menu-options")
+      .classList.remove("menu-active");
+    document
+      .getElementById("nav-menu-options")
+      .classList.add("menu-inactive");
+    document.getElementById("nav-container").classList.remove("height-auto");
+  }
+}
+
+//* Opens client's email with a new message from the form fields 
+function sendEmail(){
+  let sender = document.getElementById("sender-subject").value;
+  let msg = document.getElementById("sender-msg").value;
+  if (!isFormValid(sender, msg)) return;
+  // Creates new email with clients signed in account
+  window.open(`mailto:giorgospaphitis@gmail.com?subject=${sender}&body=${msg}`);
+}
+
+//* Checks if form fields for email are empty
+function isFormValid(sender, msg) {
+  if (sender == "") {
+    alert("No name was entered.");
+    return false;
+  } else if (msg == "") {
+    alert("No message was entered.");
+    return false;
+  }
+  return true;
+}
+
+//* Changes personal info's block heights based on windows current width
+function resize() {
   let docWidth = document.querySelector("body").offsetWidth;
   // 975 and 752 are the values of the body width when window is at 992px and 768px respectively
   if (docWidth >= 975) {
@@ -37,6 +63,7 @@ let resize = () => {
 // If window is resized then this event will trigger to fix the view
 window.addEventListener("resize", resize);
 
+//* Changes height of personal info's block based on given row length(n)
 function changeHeightSiblings(n) {
   deletePreviousStyles();
   let blocks = document.querySelectorAll(`.info-block`).length;
@@ -57,6 +84,7 @@ function changeHeightSiblings(n) {
   totalHeightRows += 30;
   addStyle(`#personal-info{height:${totalHeightRows + 10}px;}`);
 }
+
 //* Finds block with biggest height of the given row
 function findBiggestRowHeight(row, rowLength) {
   // Select first of row
@@ -78,6 +106,7 @@ function findBiggestRowHeight(row, rowLength) {
   }
   return max;
 }
+
 //* Deletes styles added from previous resizes
 function deletePreviousStyles() {
   let previous = document.getElementsByClassName("added-style");

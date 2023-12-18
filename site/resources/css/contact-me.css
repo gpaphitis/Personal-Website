@@ -56,6 +56,21 @@
   /* Message exceeds shown text box */
   overflow: auto;
 }
+.contact-info{
+  margin-left:10px;
+}
+.contact-info-block:not(:first-child){
+  margin-top:30px;
+}
+.info-title{
+  font-size: 1.2em;
+}
+.info-link{
+  display:block;
+  text-decoration:none;
+  color:lightgreen;
+  margin-top:5px;
+}
 @media (min-width: 768px) {
   .contact-block {
     width: 48%;
@@ -69,6 +84,7 @@
     margin-bottom: 10px;
   }
   .contact-block:nth-child(2){
+    margin-left: 0;
     margin-left: 0;
   }
   #contact-me {
