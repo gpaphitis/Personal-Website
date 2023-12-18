@@ -3,8 +3,12 @@
   height: 450px;
   font-size: 20px;
   padding: 10px;
+  margin-top:40px;
 }
 .contact-block {
+  /* Avoid margin collapse of title */
+  margin-top:-1px;
+  padding-top:1px;
   float: left;
   background-color: lightgray;
   height: 450px;
@@ -62,8 +66,10 @@
     width: 100%;
     float: none;
     height: auto;
-    margin-left: 0;
     margin-bottom: 10px;
+  }
+  .contact-block:nth-child(2){
+    margin-left: 0;
   }
   #contact-me {
     height: auto;
