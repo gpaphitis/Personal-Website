@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   resize();
-  document.getElementById("form-submit").addEventListener("click",sendEmail);
+  // document.getElementById("form-submit").addEventListener("click",sendEmail);
+  document.getElementById("form-submit").addEventListener("click",function(e) {
+    e.preventDefault();
+    let sender = document.getElementById("sender-subject").value;
+    let msg = document.getElementById("sender-msg").value;
+    if (!isFormValid(sender, msg)) return;
+    // Creates new email with clients signed in account
+    window.location.href=`mailto:giorgospaphitis@gmail.com?subject=${sender}&body=${msg}`;
+  });
 });
 
 //* Switches current state of nav menu
@@ -25,15 +33,6 @@ function navMenuToggle(){
       .classList.add("menu-inactive");
     document.getElementById("nav-container").classList.remove("height-auto");
   }
-}
-
-//* Opens client's email with a new message from the form fields 
-function sendEmail(){
-  let sender = document.getElementById("sender-subject").value;
-  let msg = document.getElementById("sender-msg").value;
-  if (!isFormValid(sender, msg)) return;
-  // Creates new email with clients signed in account
-  window.location.href=`mailto:giorgospaphitis@gmail.com?subject=${sender}&body=${msg}`;
 }
 
 //* Checks if form fields for email are empty
