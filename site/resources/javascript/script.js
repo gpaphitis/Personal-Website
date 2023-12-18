@@ -33,7 +33,7 @@ function sendEmail(){
   let msg = document.getElementById("sender-msg").value;
   if (!isFormValid(sender, msg)) return;
   // Creates new email with clients signed in account
-  window.open(`mailto:giorgospaphitis@gmail.com?subject=${sender}&body=${msg}`);
+  window.location.href=`mailto:giorgospaphitis@gmail.com?subject=${sender}&body=${msg}`;
 }
 
 //* Checks if form fields for email are empty
