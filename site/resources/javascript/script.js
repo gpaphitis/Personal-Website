@@ -2,21 +2,24 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   resize();
   // document.getElementById("form-submit").addEventListener("click",sendEmail);
-  document.getElementById("form-submit").addEventListener("click",function(e) {
-    e.preventDefault();
-    let sender = document.getElementById("sender-name").value;
-    let msg = document.getElementById("sender-msg").value;
-    if (!isFormValid(sender, msg)) return;
-    sendEmail(sender,msg);
-  });
+  document
+    .getElementById("form-submit")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      let sender = document.getElementById("sender-name").value;
+      let msg = document.getElementById("sender-msg").value;
+      if (!isFormValid(sender, msg)) return;
+      sendEmail(sender, msg);
+    });
 });
 
 //* Sends email to me using EmailJS API
-async function sendEmail(sender,msg) {
+async function sendEmail(sender, msg) {
+  let props = await getAPIProperties();
   let url = "https://api.emailjs.com/api/v1.0/email/send";
-  const API_KEY = "koproWzIVNyqqjJ9w";
-  const TEMPLATE_ID="template_sk0o8bf";
-  const SERVICE_ID="personal_website";
+  const API_KEY = props["api-key"];
+  const TEMPLATE_ID = props["template-id"];
+  const SERVICE_ID = props["service-id"];
   let request = new Request(url, {
     method: "POST",
     headers: {
@@ -36,8 +39,16 @@ async function sendEmail(sender,msg) {
   alert("Message sent successfully!");
 }
 
+async function getAPIProperties() {
+  let response = await fetch(
+    "http://192.168.10.15:5500/resources/api-properties.json"
+  );
+  let data = await response.json();
+  return data;
+}
+
 //* Switches current state of nav menu
-function navMenuToggle(){
+function navMenuToggle() {
   if (
     document
       .getElementById("nav-menu-options")
@@ -49,12 +60,8 @@ function navMenuToggle(){
     document.getElementById("nav-menu-options").classList.add("menu-active");
     document.getElementById("nav-container").classList.add("height-auto");
   } else {
-    document
-      .getElementById("nav-menu-options")
-      .classList.remove("menu-active");
-    document
-      .getElementById("nav-menu-options")
-      .classList.add("menu-inactive");
+    document.getElementById("nav-menu-options").classList.remove("menu-active");
+    document.getElementById("nav-menu-options").classList.add("menu-inactive");
     document.getElementById("nav-container").classList.remove("height-auto");
   }
 }
@@ -81,7 +88,7 @@ function resize() {
   else {
     deletePreviousStyles();
   }
-};
+}
 
 // If window is resized then this event will trigger to fix the view
 window.addEventListener("resize", resize);
