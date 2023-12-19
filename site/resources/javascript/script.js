@@ -4,13 +4,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // document.getElementById("form-submit").addEventListener("click",sendEmail);
   document.getElementById("form-submit").addEventListener("click",function(e) {
     e.preventDefault();
-    let sender = document.getElementById("sender-subject").value;
+    let sender = document.getElementById("sender-name").value;
     let msg = document.getElementById("sender-msg").value;
     if (!isFormValid(sender, msg)) return;
-    // Creates new email with clients signed in account
-    window.location.href=`mailto:giorgospaphitis@gmail.com?subject=${sender}&body=${msg}`;
+    sendEmail(sender,msg);
   });
 });
+
+//* Sends email to me using EmailJS API
+async function sendEmail(sender,msg) {
+  let url = "https://api.emailjs.com/api/v1.0/email/send";
+  const API_KEY = "koproWzIVNyqqjJ9w";
+  const TEMPLATE_ID="template_sk0o8bf";
+  const SERVICE_ID="personal_website";
+  let request = new Request(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      "service_id": SERVICE_ID,
+      "template_id": TEMPLATE_ID,
+      "user_id": API_KEY,
+      "template_params": {
+          "from_name": sender,
+          "message": msg
+      }
+    })
+  });
+  let response = await fetch(request);
+  alert("Message sent successfully!");
+}
 
 //* Switches current state of nav menu
 function navMenuToggle(){
