@@ -41,7 +41,7 @@ async function sendEmail(sender, msg) {
 
 async function getAPIProperties() {
   let response = await fetch(
-    "http://192.168.10.15:5500/resources/api-properties.json"
+    "https://giorgospaphitis/resources/api-properties.json"
   );
   let data = await response.json();
   return data;
