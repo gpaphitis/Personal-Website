@@ -12,17 +12,22 @@
   margin-bottom: 10px;
   height: auto;
   width: 23%;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 .info-block-title {
   height: auto;
   font-size: 1.5em;
   margin-top: 10px;
+  color: #0c2259;
+  border-bottom:solid;
+  border-bottom-width:1px;
+  border-bottom-color: #0c2259;
 }
 .info-block-txt {
   padding: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align:left;
 }
 @media (min-width: 992px) {
   .info-block {
@@ -40,6 +45,9 @@
     float: none;
     height: auto;
     margin-right:0;
+  }
+  .info-block:not(:first-child){
+    margin-top:40px;
   }
   #personal-info {
     padding: 10px;

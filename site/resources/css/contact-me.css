@@ -3,14 +3,14 @@
   height: 450px;
   font-size: 20px;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 .contact-block {
   /* Avoid margin collapse of title */
   margin-top: -1px;
   padding-top: 1px;
   float: left;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   height: 450px;
 }
 .contact-block:nth-child(2) {
@@ -20,11 +20,15 @@
   text-align: center;
   font-size: 1.5em;
   margin-top: 10px;
+  margin-bottom: 20px;
+  color:#0c2259;
+  border-bottom:1px solid #0c2259;
 }
 #form-elements {
   margin: 10px;
 }
 .form-input-header {
+  color:#0c2259;
   font-size: 1.2em;
 }
 /* Leave bigger margin in between form fields  */
@@ -43,13 +47,18 @@
   width: 100px;
   height: 50px;
   font-size: 0.9em;
-  color: lightgreen;
+  color: white;
+  background-color:#0c2259;
+  border:solid;
+  border-width:1px;
   transition: 0.12s ease-out;
-  border: none;
 }
 #form-submit:hover {
-  color: white;
-  background-color: lightgreen;
+  color: #d3d6de;
+  background-color: #03194f;
+}
+#form-submit:active{
+  background-color:#021136;
 }
 #sender-msg {
   height: 200px;
@@ -64,6 +73,7 @@
 }
 .info-title {
   font-size: 1.2em;
+  color:#0c2259;
 }
 .info-link {
   margin-top: 5px;
@@ -71,7 +81,10 @@
 a.info-link {
   display: block;
   text-decoration: none;
-  color: lightgreen;
+  color: #0c2259;
+}
+a.info-link:hover{
+  color:#021136;
 }
 @media (min-width: 768px) {
   .contact-block {
@@ -87,7 +100,7 @@ a.info-link {
   }
   .contact-block:nth-child(2) {
     margin-left: 0;
-    margin-left: 0;
+    margin-top:40px;
   }
   #contact-me {
     height: auto;
