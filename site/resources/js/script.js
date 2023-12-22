@@ -1,16 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
-  resize();
-  document
-    .getElementById("form-submit")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      let sender = document.getElementById("sender-name").value;
-      let msg = document.getElementById("sender-msg").value;
-      if (!isFormValid(sender, msg)) return;
-      sendEmail(sender, msg);
-    });
+  loadHomePage().then(function() {
+    document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
+    resize();
+    document
+      .getElementById("form-submit")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        let sender = document.getElementById("sender-name").value;
+        let msg = document.getElementById("sender-msg").value;
+        if (!isFormValid(sender, msg)) return;
+        sendEmail(sender, msg);
+      });
+  });
 });
+
+async function loadHomePage() {
+  let header=await getTextResponse("http://192.168.10.15:5500/resources/html/header.html");
+  let personalInfo=await getTextResponse("http://192.168.10.15:5500/resources/html/personal-info.html");
+  let contactMe=await getTextResponse("http://192.168.10.15:5500/resources/html/contact-me.html");
+  document.querySelector("#page-content-wrapper").innerHTML=header+personalInfo+contactMe;
+}
+
+
+//* Returns text response of GET request to given URL
+async function getTextResponse(url){
+  let response =await fetch(url);
+  let data=await response.text();
+  return data;
+}
 
 //* Sends email to me using EmailJS API
 async function sendEmail(sender, msg) {
@@ -57,9 +74,9 @@ function navMenuToggle() {
 
 //* Checks if nav menu is active
 function isNavMenuActive() {
-  return (document
+  return document
     .getElementById("nav-menu-options")
-    .classList.contains("menu-active"));
+    .classList.contains("menu-active");
 }
 
 //* Toggles nav menu off
@@ -138,7 +155,7 @@ function findBiggestRowHeight(row, rowLength) {
   let max = document.querySelector(
     `.info-block:nth-child(${row * rowLength + 1})`
   ).offsetHeight;
-  
+
   for (let i = 2; i <= rowLength; i++) {
     let currHeight = 0;
     // Row might not be full so check first
