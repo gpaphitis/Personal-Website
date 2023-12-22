@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  loadHomePage().then(function() {
-    document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
+  loadHomePage().then(function () {
+    document.getElementById("nav-logo").addEventListener("click", loadHomePage);
+    document
+      .getElementById("nav-menu")
+      .addEventListener("click", navMenuToggle);
     resize();
     document
       .getElementById("form-submit")
@@ -14,18 +17,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//* Loads main page contents
 async function loadHomePage() {
-  let header=await getTextResponse("https://giorgospaphitis.com/resources/html/header.html");
-  let personalInfo=await getTextResponse("https://giorgospaphitis.com/resources/html/personal-info.html");
-  let contactMe=await getTextResponse("https://giorgospaphitis.com/resources/html/contact-me.html");
-  document.querySelector("#page-content-wrapper").innerHTML=header+personalInfo+contactMe;
+  let header = await getTextResponse(
+    "https://giorgospaphitis.com/resources/html/header.html"
+  );
+  let personalInfo = await getTextResponse(
+    "https://giorgospaphitis.com/resources/html/personal-info.html"
+  );
+  let contactMe = await getTextResponse(
+    "https://giorgospaphitis.com/resources/html/contact-me.html"
+  );
+  document.querySelector("#page-content-wrapper").innerHTML =
+    header + personalInfo + contactMe;
 }
 
+//* Loads certifications page contents
+async function loadCertificationsPage() {
+  let certifications = await getTextResponse(
+    "https://giorgospaphitis.com/resources/html/certifications.html"
+  );
+  document.querySelector("#page-content-wrapper").innerHTML = certifications;
+}
 
 //* Returns text response of GET request to given URL
-async function getTextResponse(url){
-  let response =await fetch(url);
-  let data=await response.text();
+async function getTextResponse(url) {
+  let response = await fetch(url);
+  let data = await response.text();
   return data;
 }
 

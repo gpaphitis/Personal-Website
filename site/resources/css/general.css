@@ -8,3 +8,6 @@ body {
   margin-top: 0;
   background-color:#f8f8f8;
 }
+#page-content-wrapper{
+  margin-top: 20px;
+}

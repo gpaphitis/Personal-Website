@@ -29,6 +29,12 @@
   padding-bottom: 10px;
   text-align:left;
 }
+#cert-link{
+  color:#0c2259;
+  text-decoration:underline;
+  /* Makes element appear clickable */
+  cursor:pointer;
+}
 @media (min-width: 992px) {
   .info-block {
     width: 32%;
