@@ -30,6 +30,7 @@
    margin-top:5px;
    text-decoration:underline;
    color:#1e4fc9;
+   cursor:pointer;
 }
 .cert-link:hover{
    color:#021136;
