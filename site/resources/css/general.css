@@ -9,5 +9,6 @@ body {
   background-color:#f8f8f8;
 }
 #page-content-wrapper{
-  margin-top: 20px;
+  margin-top: 19px;
+  padding-top:1px;
 }

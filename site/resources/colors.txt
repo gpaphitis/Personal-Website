@@ -1,0 +1,8 @@
+Text headers, navbar background, bullet points, buttons: #0c2259
+Button background hover: #03194f
+Button text hover: #d3d6de
+Button background active: #021136
+Link: #1e4fc9
+Link hover: #021136
+White background(and hovering) and text: #f8f8f8
+White active background:#e0e0e0

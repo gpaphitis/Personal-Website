@@ -1,20 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  loadHomePage().then(function () {
-    document.getElementById("nav-logo").addEventListener("click", loadHomePage);
-    document
-      .getElementById("nav-menu")
-      .addEventListener("click", navMenuToggle);
-    resize();
-    document
-      .getElementById("form-submit")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        let sender = document.getElementById("sender-name").value;
-        let msg = document.getElementById("sender-msg").value;
-        if (!isFormValid(sender, msg)) return;
-        sendEmail(sender, msg);
-      });
-  });
+  loadHomePage();
 });
 
 //* Loads main page contents
@@ -29,15 +14,49 @@ async function loadHomePage() {
     "https://giorgospaphitis.com/resources/html/contact-me.html"
   );
   document.querySelector("#page-content-wrapper").innerHTML =
-    header + personalInfo + contactMe;
+  header + personalInfo + contactMe;
+  resize();
+  
+  // Add listeners
+  document.getElementById("nav-logo").addEventListener("click", loadHomePage);
+  document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
+  document
+    .getElementById("form-submit")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      let sender = document.getElementById("sender-name").value;
+      let msg = document.getElementById("sender-msg").value;
+      if (!isFormValid(sender, msg)) return;
+      sendEmail(sender, msg);
+    });
 }
 
 //* Loads certifications page contents
 async function loadCertificationsPage() {
-  let certifications = await getTextResponse(
+  let certificationTemplate = await getTextResponse(
     "https://giorgospaphitis.com/resources/html/certifications.html"
   );
-  document.querySelector("#page-content-wrapper").innerHTML = certifications;
+  document.querySelector("#page-content-wrapper").innerHTML = certificationTemplate;
+  let certificates = await getJsonData(
+    "https://giorgospaphitis.com/resources/certificates.json"
+  );
+  injectCertificates(certificates);
+}
+
+//* Injects certificates to page with the appropriate structure
+async function injectCertificates(certificates){
+  let i = 1;
+  // Iterate through json properties
+  while (certificates.hasOwnProperty(`${i}`)) {
+    let cert = certificates[`${i}`];
+    let listItem = `<div class="cert-list-elem"><li class="cert-link-header">${cert["title"]}</li>`;
+    // Some links do not have a url
+    if (cert["url"] != "")
+      listItem += `<a class="cert-link">${cert["url"]}</a>`;
+    listItem+="</div>";
+    document.querySelector("#cert-list").innerHTML += listItem;
+    i++;
+  }
 }
 
 //* Returns text response of GET request to given URL
@@ -49,7 +68,9 @@ async function getTextResponse(url) {
 
 //* Sends email to me using EmailJS API
 async function sendEmail(sender, msg) {
-  let props = await getAPIProperties();
+  let props = await getJsonData(
+    "https://giorgospaphitis.com/resources/api-properties.json"
+  );
   let url = "https://api.emailjs.com/api/v1.0/email/send";
   const API_KEY = props["api-key"];
   const TEMPLATE_ID = props["template-id"];
@@ -74,10 +95,8 @@ async function sendEmail(sender, msg) {
 }
 
 //* Fetches EmailJS API properties from local json file
-async function getAPIProperties() {
-  let response = await fetch(
-    "https://giorgospaphitis.com/resources/api-properties.json"
-  );
+async function getJsonData(url) {
+  let response = await fetch(url);
   let data = await response.json();
   return data;
 }
