@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   resize();
-  // document.getElementById("form-submit").addEventListener("click",sendEmail);
   document
     .getElementById("form-submit")
     .addEventListener("click", function (e) {
@@ -26,14 +25,14 @@ async function sendEmail(sender, msg) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      "service_id": SERVICE_ID,
-      "template_id": TEMPLATE_ID,
-      "user_id": API_KEY,
-      "template_params": {
-          "from_name": sender,
-          "message": msg
-      }
-    })
+      service_id: SERVICE_ID,
+      template_id: TEMPLATE_ID,
+      user_id: API_KEY,
+      template_params: {
+        from_name: sender,
+        message: msg,
+      },
+    }),
   });
   let response = await fetch(request);
   alert("Message sent successfully!");
@@ -49,21 +48,32 @@ async function getAPIProperties() {
 
 //* Switches current state of nav menu
 function navMenuToggle() {
-  if (
-    document
-      .getElementById("nav-menu-options")
-      .classList.contains("menu-inactive")
-  ) {
-    document
-      .getElementById("nav-menu-options")
-      .classList.remove("menu-inactive");
-    document.getElementById("nav-menu-options").classList.add("menu-active");
-    document.getElementById("nav-container").classList.add("height-auto");
+  if (isNavMenuActive()) {
+    toggleOffNavMenu();
   } else {
-    document.getElementById("nav-menu-options").classList.remove("menu-active");
-    document.getElementById("nav-menu-options").classList.add("menu-inactive");
-    document.getElementById("nav-container").classList.remove("height-auto");
+    toggleOnNavMenu();
   }
+}
+
+//* Checks if nav menu is active
+function isNavMenuActive() {
+  return (document
+    .getElementById("nav-menu-options")
+    .classList.contains("menu-active"));
+}
+
+//* Toggles nav menu off
+function toggleOffNavMenu() {
+  document.getElementById("nav-menu-options").classList.remove("menu-active");
+  document.getElementById("nav-menu-options").classList.add("menu-inactive");
+  document.getElementById("nav-container").classList.remove("height-auto");
+}
+
+//* Toggles nav menu on
+function toggleOnNavMenu() {
+  document.getElementById("nav-menu-options").classList.remove("menu-inactive");
+  document.getElementById("nav-menu-options").classList.add("menu-active");
+  document.getElementById("nav-container").classList.add("height-auto");
 }
 
 //* Checks if form fields for email are empty
@@ -83,9 +93,16 @@ function resize() {
   let docWidth = document.querySelector("body").offsetWidth;
   // 975 and 752 are the values of the body width when window is at 992px and 768px respectively
   if (docWidth >= 975) {
+    if (isNavMenuActive()) {
+      toggleOffNavMenu();
+    }
     changeHeightSiblings(3);
-  } else if (docWidth >= 752) changeHeightSiblings(2);
-  else {
+  } else if (docWidth >= 752) {
+    if (isNavMenuActive()) {
+      toggleOffNavMenu();
+    }
+    changeHeightSiblings(2);
+  } else {
     deletePreviousStyles();
   }
 }
@@ -121,6 +138,7 @@ function findBiggestRowHeight(row, rowLength) {
   let max = document.querySelector(
     `.info-block:nth-child(${row * rowLength + 1})`
   ).offsetHeight;
+  
   for (let i = 2; i <= rowLength; i++) {
     let currHeight = 0;
     // Row might not be full so check first
