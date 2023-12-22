@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function loadHomePage() {
-  let header=await getTextResponse("http://192.168.10.15:5500/resources/html/header.html");
-  let personalInfo=await getTextResponse("http://192.168.10.15:5500/resources/html/personal-info.html");
-  let contactMe=await getTextResponse("http://192.168.10.15:5500/resources/html/contact-me.html");
+  let header=await getTextResponse("https://giorgospaphitis.com/resources/html/header.html");
+  let personalInfo=await getTextResponse("https://giorgospaphitis.com/resources/html/personal-info.html");
+  let contactMe=await getTextResponse("https://giorgospaphitis.com/resources/html/contact-me.html");
   document.querySelector("#page-content-wrapper").innerHTML=header+personalInfo+contactMe;
 }
 
@@ -55,6 +55,7 @@ async function sendEmail(sender, msg) {
   alert("Message sent successfully!");
 }
 
+//* Fetches EmailJS API properties from local json file
 async function getAPIProperties() {
   let response = await fetch(
     "https://giorgospaphitis.com/resources/api-properties.json"
