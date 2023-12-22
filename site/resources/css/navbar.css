@@ -18,7 +18,7 @@
   float: left;
   width: 20%;
   /** Remove if picture is used */
-  color:white;
+  color:#f8f8f8;
   margin-top: 35px;
   text-align:center;
 }
@@ -29,29 +29,24 @@
 }
 .nav-link {
   text-align: center;
-  border-left: 1px solid white;
+  border-left: 1px solid #f8f8f8;
   height: 98px;
   width: 20%;
   float: right;
   padding-top: 15px;
   text-decoration: none;
-  color: white;
+  color: #f8f8f8;
   transition: 0.15s ease-out;
-}
-/* First child is the right most element */
-.nav-link:first-child {
-  border-right: 1px solid white;
 }
 .nav-link:hover {
   border-color:#0c2259;
   border-bottom:1px solid;
-  background-color: white;
+  background-color: #f8f8f8;
   color: #0c2259;
 }
 .nav-link:active {
   border-color:#0c2259;
-  background-color: #f0f0f0;
-  /* color:white; */
+  background-color: #e0e0e0;
 }
 #nav-menu {
   display: none;
@@ -62,14 +57,14 @@
 #nav-menu-icon {
   margin-top: 20px;
   border: solid;
-  border-color: white;
+  border-color: #f8f8f8;
   border-width: 2px;
   /* When anything about its properties changes, i.e. with hover, it will have a transition period of 0.2s */
   transition: 0.2s ease-in;
 }
 #nav-menu-icon:hover {
   fill: #0c2259;
-  background-color: white;
+  background-color: #f8f8f8;
 }
 #nav-menu-options {
   /* Hides child elements so they don't appear as clickable */
@@ -97,20 +92,20 @@
   display: block;
   height: 50px;
   border-top: solid;
-  border-color: white;
+  border-color: #f8f8f8;
   border-width: 1px;
   text-decoration: none;
-  color: white;
+  color: #f8f8f8;
   transition: 0.12s ease-out;
 }
 .nav-menu-option:last-child {
   border-bottom: solid;
-  border-bottom-color: white;
-  border-width: 2px;
+  border-bottom-color: #f8f8f8;
+  border-width: 1px;
 }
 .nav-menu-option:hover {
   color: #0c2259;
-  background-color: white;
+  background-color: #f8f8f8;
   border-color:#0c2259;
 }
 @media (max-width: 767.99px) {
