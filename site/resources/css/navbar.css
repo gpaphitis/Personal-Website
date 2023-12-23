@@ -12,7 +12,7 @@
 }
 /* When menu is active then navbar height switches to auto to fit content */
 #nav-container.height-auto {
-  height: 239px;
+  height: 289px;
 }
 #nav-logo {
   float: left;
