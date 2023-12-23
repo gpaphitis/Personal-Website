@@ -35,7 +35,7 @@
             </svg>
             <p class="nav-link-text">CV</p>
          </a>
-         <a href="#contact-me" class="nav-link">
+         <a onclick="gotToContactMe()" class="nav-link">
             <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
                viewBox="0 0 16 16">
                <path
@@ -43,7 +43,7 @@
             </svg>
             <p class="nav-link-text">Contact me!</p>
          </a>
-         <a href="#personal-info" class="nav-link">
+         <a onclick="gotToAboutMe()" class="nav-link">
             <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="navbar-link-logo"
                viewBox="0 0 16 16">
                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -69,8 +69,8 @@
       </button>
       <div id="nav-menu-options" class="menu-inactive">
          <!-- br helps with centering the text vertically -->
-         <a class="nav-menu-option" href="#personal-info"><br>About me</a>
-         <a class="nav-menu-option" href="#contact-me"><br>Contact me!</a>
+         <a class="nav-menu-option" onclick="gotToAboutMe()"><br>About me</a>
+         <a class="nav-menu-option" onclick="gotToContactMe()"><br>Contact me!</a>
          <a class="nav-menu-option" href="resources/Giorgos_Paphitis_CV.pdf" target="_blank"><br>CV</a>
          <a class="nav-menu-option" onclick="loadCertificationsPage()"><br>Certificates</a>
       </div>

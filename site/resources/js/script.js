@@ -1,11 +1,39 @@
+const page={
+  Main:"main",
+  Certificates:"Certificates"
+}
+let currentPage = null;
+
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("nav-logo").addEventListener("click", loadHomePage);
   document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   loadHomePage();
 });
 
+//* Loads main page and scrolls to "About me" section
+async function gotToAboutMe() {
+  loadHomePage().then(() => {
+    window.scrollTo(0, findHeightOffset("#personal-info"));
+  });
+}
+
+//* Loads main page and scrolls to "Contact me" section
+async function gotToContactMe() {
+  loadHomePage().then(() => {
+    window.scrollTo(0, findHeightOffset("#contact-me"));
+  });
+}
+
+//* Finds offset from the top of the page
+function findHeightOffset(selector) {
+  let height = 0;
+  let element = document.querySelector(selector);
+  return element.offsetTop;
+}
+
 //* Loads main page contents
 async function loadHomePage() {
+  if (currentPage == page.Main) return;
   let header = await getTextResponse(
     "https://giorgospaphitis.com/resources/html/header.html"
   );
@@ -16,9 +44,9 @@ async function loadHomePage() {
     "https://giorgospaphitis.com/resources/html/contact-me.html"
   );
   document.querySelector("#page-content-wrapper").innerHTML =
-  header + personalInfo + contactMe;
+    header + personalInfo + contactMe;
   resize();
-  
+
   // Add listeners
   document
     .getElementById("form-submit")
@@ -29,22 +57,26 @@ async function loadHomePage() {
       if (!isFormValid(sender, msg)) return;
       sendEmail(sender, msg);
     });
+  currentPage = page.Main;
 }
 
 //* Loads certifications page contents
 async function loadCertificationsPage() {
+  if (currentPage == page.Certificates) return;
   let certificationTemplate = await getTextResponse(
     "https://giorgospaphitis.com/resources/html/certifications.html"
   );
-  document.querySelector("#page-content-wrapper").innerHTML = certificationTemplate;
+  document.querySelector("#page-content-wrapper").innerHTML =
+    certificationTemplate;
   let certificates = await getJsonData(
     "https://giorgospaphitis.com/resources/certificates.json"
   );
   injectCertificates(certificates);
+  currentPage = page.Certificates;
 }
 
 //* Injects certificates to page with the appropriate structure
-async function injectCertificates(certificates){
+async function injectCertificates(certificates) {
   let i = 1;
   // Iterate through json properties
   while (certificates.hasOwnProperty(`${i}`)) {
@@ -53,7 +85,7 @@ async function injectCertificates(certificates){
     // Some links do not have a url
     if (cert["url"] != "")
       listItem += `<a class="cert-link" href="${cert["url"]}" target="_blank">${cert["url"]}</a>`;
-    listItem+="</div>";
+    listItem += "</div>";
     document.querySelector("#cert-list").innerHTML += listItem;
     i++;
   }
