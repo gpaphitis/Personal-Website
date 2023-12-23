@@ -52,7 +52,7 @@ async function injectCertificates(certificates){
     let listItem = `<div class="cert-list-elem"><li class="cert-link-header">${cert["title"]}</li>`;
     // Some links do not have a url
     if (cert["url"] != "")
-      listItem += `<a class="cert-link">${cert["url"]}</a>`;
+      listItem += `<a class="cert-link" href="${cert["url"]}" target="_blank">${cert["url"]}</a>`;
     listItem+="</div>";
     document.querySelector("#cert-list").innerHTML += listItem;
     i++;
