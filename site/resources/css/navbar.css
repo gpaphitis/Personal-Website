@@ -12,16 +12,13 @@
 }
 /* When menu is active then navbar height switches to auto to fit content */
 #nav-container.height-auto {
-  height: 289px;
+  height: 310px;
 }
 #nav-logo {
   float: left;
-  height: 63px;
-  width: 20%;
-  /** Remove if picture is used */
-  color: #f8f8f8;
-  margin-top: 35px;
-  text-align: center;
+  height: 100px;
+  width: 100px;;
+  text-align:center;
   cursor: pointer;
 }
 #nav-links-container {
@@ -76,7 +73,7 @@
   visibility: hidden;
   /* Centers text vertically */
   line-height: 15px;
-  margin-top: 90px;
+  margin-top: 110px;
   text-align: center;
   height: 0;
   /* This is needed for transition since there is no transition for visibility */

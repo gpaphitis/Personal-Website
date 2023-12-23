@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("nav-logo").addEventListener("click", loadHomePage);
+  document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   loadHomePage();
 });
 
@@ -18,8 +20,6 @@ async function loadHomePage() {
   resize();
   
   // Add listeners
-  document.getElementById("nav-logo").addEventListener("click", loadHomePage);
-  document.getElementById("nav-menu").addEventListener("click", navMenuToggle);
   document
     .getElementById("form-submit")
     .addEventListener("click", function (e) {
