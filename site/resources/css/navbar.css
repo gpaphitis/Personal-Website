@@ -36,6 +36,7 @@
   text-decoration: none;
   color: #f8f8f8;
   transition: 0.15s ease-out;
+  cursor:pointer;
 }
 .nav-link:hover {
   border-color: #0c2259;
@@ -60,6 +61,7 @@
   border-width: 2px;
   /* When anything about its properties changes, i.e. with hover, it will have a transition period of 0.2s */
   transition: 0.2s ease-in;
+  cursor:pointer;
 }
 #nav-menu-icon:hover {
   fill: #0c2259;
@@ -99,6 +101,7 @@
   text-decoration: none;
   color: #f8f8f8;
   transition: 0.12s ease-out;
+  cursor:pointer;
 }
 .nav-menu-option:last-child {
   border-bottom: solid;
