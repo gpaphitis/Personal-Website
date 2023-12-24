@@ -1,7 +1,7 @@
-const page={
-  Main:"main",
-  Certificates:"Certificates"
-}
+const page = {
+  Main: "main",
+  Certificates: "Certificates",
+};
 let currentPage = null;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -47,15 +47,12 @@ async function loadHomePage() {
     header + personalInfo + contactMe;
   resize();
 
-  // Add listeners
+  // Add form listener
   document
     .getElementById("form-submit")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      let sender = document.getElementById("sender-name").value;
-      let msg = document.getElementById("sender-msg").value;
-      if (!isFormValid(sender, msg)) return;
-      sendEmail(sender, msg);
+      sendEmail();
     });
   currentPage = page.Main;
 }
@@ -99,7 +96,9 @@ async function getTextResponse(url) {
 }
 
 //* Sends email to me using EmailJS API
-async function sendEmail(sender, msg) {
+async function sendEmail() {
+  let formValues = getFormValues();
+  if (formValues == null) return;
   let props = await getJsonData(
     "https://giorgospaphitis.com/resources/api-properties.json"
   );
@@ -117,13 +116,39 @@ async function sendEmail(sender, msg) {
       template_id: TEMPLATE_ID,
       user_id: API_KEY,
       template_params: {
-        from_name: sender,
-        message: msg,
+        from_name: formValues.sender,
+        message: formValues.msg,
+        respond: formValues.respond,
       },
     }),
   });
   let response = await fetch(request);
   alert("Message sent successfully!");
+}
+
+//* Returns the inputs of the form fields
+function getFormValues() {
+  let formValues = new Object();
+  formValues.sender = document.getElementById("sender-name").value;
+  formValues.respond = document.getElementById("sender-respond").value;
+  formValues.msg = document.getElementById("sender-msg").value;
+  if (!isFormValid(formValues)) return null;
+  return formValues;
+}
+
+//* Checks if form fields for email are empty
+function isFormValid(formValues) {
+  if (formValues.sender == "") {
+    alert("No name was entered.");
+    return false;
+  } else if (formValues.respond == "") {
+    alert("No link for me to respond to was entered.");
+    return false;
+  } else if (formValues.msg == "") {
+    alert("No message was entered.");
+    return false;
+  }
+  return true;
 }
 
 //* Fetches EmailJS API properties from local json file
@@ -161,18 +186,6 @@ function toggleOnNavMenu() {
   document.getElementById("nav-menu-options").classList.remove("menu-inactive");
   document.getElementById("nav-menu-options").classList.add("menu-active");
   document.getElementById("nav-container").classList.add("height-auto");
-}
-
-//* Checks if form fields for email are empty
-function isFormValid(sender, msg) {
-  if (sender == "") {
-    alert("No name was entered.");
-    return false;
-  } else if (msg == "") {
-    alert("No message was entered.");
-    return false;
-  }
-  return true;
 }
 
 //* Changes personal info's block heights based on windows current width

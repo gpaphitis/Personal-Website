@@ -21,14 +21,14 @@
   font-size: 1.5em;
   margin-top: 10px;
   margin-bottom: 20px;
-  color:#0c2259;
-  border-bottom:1px solid #0c2259;
+  color: #0c2259;
+  border-bottom: 1px solid #0c2259;
 }
 #form-elements {
   margin: 10px;
 }
 .form-input-header {
-  color:#0c2259;
+  color: #0c2259;
   font-size: 1.2em;
 }
 /* Leave bigger margin in between form fields  */
@@ -48,17 +48,17 @@
   height: 50px;
   font-size: 0.9em;
   color: #f8f8f8;
-  background-color:#0c2259;
-  border:solid;
-  border-width:1px;
+  background-color: #0c2259;
+  border: solid;
+  border-width: 1px;
   transition: 0.12s ease-out;
 }
 #form-submit:hover {
   color: #d3d6de;
   background-color: #03194f;
 }
-#form-submit:active{
-  background-color:#021136;
+#form-submit:active {
+  background-color: #021136;
 }
 #sender-msg {
   height: 200px;
@@ -73,10 +73,14 @@
 }
 .info-title {
   font-size: 1.2em;
-  color:#0c2259;
+  color: #0c2259;
+}
+/* Icon used in title */
+.info-title > svg {
+  margin-bottom: -1px; /* Helps line it up at the bottom ith the title */
 }
 .info-link {
-  width:fit-content;
+  width: fit-content;
   margin-top: 5px;
 }
 a.info-link {
@@ -84,8 +88,8 @@ a.info-link {
   text-decoration: underline;
   color: #1e4fc9;
 }
-a.info-link:hover{
-  color:#021136;
+a.info-link:hover {
+  color: #021136;
 }
 @media (min-width: 768px) {
   .contact-block {
@@ -101,7 +105,7 @@ a.info-link:hover{
   }
   .contact-block:nth-child(2) {
     margin-left: 0;
-    margin-top:40px;
+    margin-top: 40px;
   }
   #contact-me {
     height: auto;
