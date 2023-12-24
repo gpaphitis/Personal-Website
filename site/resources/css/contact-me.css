@@ -52,6 +52,7 @@
   border: solid;
   border-width: 1px;
   transition: 0.12s ease-out;
+  cursor: pointer;
 }
 #form-submit:hover {
   color: #d3d6de;
