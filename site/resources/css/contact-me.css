@@ -1,9 +1,13 @@
 #contact-me {
   width: 100%;
-  height: 450px;
+  height: auto;
   font-size: 20px;
   padding: 10px;
-  margin-top: 60px;
+  margin-top: 70px;
+}
+#contact-section-container{
+  /* Height of tallest block which is the form */
+  height:550px;
 }
 .contact-block {
   /* Avoid margin collapse of title */
@@ -11,7 +15,7 @@
   padding-top: 1px;
   float: left;
   /* background-color: lightgray; */
-  height: 450px;
+  height: auto;
 }
 .contact-block:nth-child(2) {
   margin-left: 10px;

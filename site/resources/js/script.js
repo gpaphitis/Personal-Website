@@ -229,7 +229,8 @@ function changeHeightSiblings(n) {
     }
   }
   totalHeightRows += 30;
-  addStyle(`#personal-info{height:${totalHeightRows + 10}px;}`);
+  // Set total height of container
+  addStyle(`#personal-info-container{height:${totalHeightRows + 10}px;}`);
 }
 
 //* Finds block with biggest height of the given row

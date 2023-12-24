@@ -3,9 +3,11 @@
   font-size: 130%;
   color:#0c2259;
 }
-
+#header-title{
+  font-size: 2.5em;
+}
 #header-dsc {
-  font-size: 120%;
+  font-size: 1.5em;
 }
 
 #header-content-container {
@@ -16,8 +18,8 @@
 }
 
 #header-content {
-  /* Shift content to the left inside the content container to maintain proper overall width */
-  padding-left: 30%;
+  /* Shift content to the right inside the content container to maintain proper overall width */
+  padding-left: 20%;
 }
 
 #profile-container {
