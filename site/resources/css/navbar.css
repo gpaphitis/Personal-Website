@@ -7,6 +7,7 @@
   background-color: #0c2259;
   border: 1px solid #0c2259;
   height: 100px;
+  font-size:18px;
   /* Transition for nav height so header transitions slowly down */
   transition: height 0.2s ease-in;
 }
@@ -24,7 +25,6 @@
 #nav-links-container {
   width: 70%;
   float: right;
-  text-align: right;
 }
 .nav-link {
   text-align: center;
