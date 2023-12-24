@@ -1,5 +1,5 @@
 #header-container {
-  height: 300px;
+  height: 325px;
   font-size: 130%;
   color:#0c2259;
 }
@@ -14,7 +14,8 @@
   /* Place it at the center of the picture */
   padding-top: 70px;
   float: left;
-  width: 55%;
+  width: 60%;
+  padding-right:20px;
 }
 
 #header-content {
@@ -23,10 +24,11 @@
 }
 
 #profile-container {
-  padding-right: 5%;
+  text-align:right;
   float: left;
-  width: 35%;
-  opacity: 90%;
+  /* Helps keep image not very far towards the right */
+  padding-right: 5%;
+  width: 30%;
 }
 
 @media (max-width: 768px) {
@@ -38,17 +40,17 @@
   /* Place elements back in document flow. Helps align next section to the bottom of it */
   #header-content-container {
     float: none;
-    padding-top: 0;
+    padding: 0;
     width: 97%;
+    padding-left:10px;
   }
   #header-content {
     padding-left: 0;
-    padding-right: 0;
   }
   #profile-container {
+    text-align:center;
     float: none;
     width: 97%;
-    padding-left: 0;
     padding-right: 0;
   }
 }
