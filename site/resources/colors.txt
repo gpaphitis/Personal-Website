@@ -7,3 +7,4 @@ Link hover: #021136
 White background(and hovering) and text: #f8f8f8
 White active background:#e0e0e0
 Red asterisk(required), invalid input: red
+Font weight: 550

@@ -2,6 +2,7 @@
   height: 325px;
   font-size: 130%;
   color:#0c2259;
+  margin-top:50px;
 }
 #header-title{
   font-size: 2.5em;
@@ -9,7 +10,6 @@
 #header-dsc {
   font-size: 1.5em;
 }
-
 #header-content-container {
   /* Place it at the center of the picture */
   padding-top: 70px;

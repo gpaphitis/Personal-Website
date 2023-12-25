@@ -55,6 +55,7 @@
   margin-right: 8px;
 }
 #nav-menu-icon {
+  color:#f8f8f8;
   margin-top: 20px;
   border: solid;
   border-color: #f8f8f8;
@@ -64,7 +65,7 @@
   cursor:pointer;
 }
 #nav-menu-icon:hover {
-  fill: #0c2259;
+  color: #0c2259;
   background-color: #f8f8f8;
 }
 #nav-menu-icon:active{
