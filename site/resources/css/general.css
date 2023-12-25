@@ -7,10 +7,12 @@ body {
   margin-right: 0;
   margin-top: 0;
   background-color:#f8f8f8;
+  padding-bottom:40px;
 }
 #page-content-wrapper{
   margin-top: 40px;
   padding-top:1px;
+  height:auto;
 }
 .content-container{
   margin-top:30px;

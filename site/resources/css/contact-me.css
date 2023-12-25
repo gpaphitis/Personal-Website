@@ -115,4 +115,7 @@ a.info-link:hover {
   #contact-me {
     height: auto;
   }
+  #contact-section-container{
+    height:auto;
+  }
 }
