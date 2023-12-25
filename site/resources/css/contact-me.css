@@ -65,6 +65,14 @@
 #form-submit:active {
   background-color: #021136;
 }
+.form-required{
+  display:inline-block;
+  color:red;
+  position: relative; /* Needed to offset element from its original position */
+  top:5px; /* Offset from the top */
+  left:3px; /* Offset from the left */
+  height:15px; /* Height of * */
+}
 #sender-msg {
   height: 200px;
   /* Message exceeds shown text box */
