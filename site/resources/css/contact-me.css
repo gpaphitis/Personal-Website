@@ -70,6 +70,10 @@
   /* Message exceeds shown text box */
   overflow: auto;
 }
+#sender-respond:invalid{
+  border:2px solid red;
+  
+}
 .contact-info {
   margin-left: 10px;
 }
