@@ -6,3 +6,4 @@ Link: #1e4fc9
 Link hover: #021136
 White background(and hovering) and text: #f8f8f8
 White active background:#e0e0e0
+Red asterisk(required), invalid input: red
