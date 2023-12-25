@@ -20,6 +20,7 @@
 }
 .cert-link{
    display:block;
+   width:fit-content;
    margin-top:5px;
    text-decoration:underline;
    color:#1e4fc9;
