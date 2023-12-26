@@ -7,25 +7,30 @@
   background-color: #0c2259;
   border: 1px solid #0c2259;
   height: 100px;
-  font-size:18px;
+  font-size: 18px;
   /* Transition for nav height so header transitions slowly down */
   transition: height 0.2s ease-in;
 }
+
 /* When menu is active then navbar height switches to auto to fit content */
 #nav-container.height-auto {
   height: 310px;
 }
+
 #nav-logo {
   float: left;
   height: 100px;
-  width: 100px;;
-  text-align:center;
+  width: 100px;
+  ;
+  text-align: center;
   cursor: pointer;
 }
+
 #nav-links-container {
   width: 70%;
   float: right;
 }
+
 .nav-link {
   text-align: center;
   border-left: 1px solid #f8f8f8;
@@ -36,41 +41,48 @@
   text-decoration: none;
   color: #f8f8f8;
   transition: 0.15s ease-out;
-  cursor:pointer;
+  cursor: pointer;
 }
+
 .nav-link:hover {
   border-color: #0c2259;
   border-bottom: 1px solid;
   background-color: #f8f8f8;
   color: #0c2259;
 }
+
 .nav-link:active {
   border-color: #0c2259;
   background-color: #e0e0e0;
 }
+
 #nav-menu {
   display: none;
   border: none;
   background: none;
   margin-right: 8px;
 }
+
 #nav-menu-icon {
-  color:#f8f8f8;
+  color: #f8f8f8;
   margin-top: 20px;
   border: solid;
   border-color: #f8f8f8;
   border-width: 2px;
   /* When anything about its properties changes, i.e. with hover, it will have a transition period of 0.2s */
   transition: 0.2s ease-in;
-  cursor:pointer;
+  cursor: pointer;
 }
+
 #nav-menu-icon:hover {
   color: #0c2259;
   background-color: #f8f8f8;
 }
-#nav-menu-icon:active{
+
+#nav-menu-icon:active {
   background-color: #e0e0e0;
 }
+
 #nav-menu-options {
   /* Hides child elements so they don't appear as clickable */
   visibility: hidden;
@@ -82,10 +94,12 @@
   /* This is needed for transition since there is no transition for visibility */
   opacity: 0;
 }
+
 #nav-menu-options.menu-inactive {
   /* Applies this transition when class changes to inactive */
   transition: opacity 0.05s ease-in;
 }
+
 #nav-menu-options.menu-active {
   /* When transition is applied opacity also changes so the transition is enabled */
   transition: opacity 0.3s ease-in;
@@ -93,6 +107,7 @@
   height: auto;
   visibility: visible;
 }
+
 .nav-menu-option {
   display: block;
   height: 50px;
@@ -102,25 +117,30 @@
   text-decoration: none;
   color: #f8f8f8;
   transition: 0.12s ease-out;
-  cursor:pointer;
+  cursor: pointer;
 }
+
 .nav-menu-option:last-child {
   border-bottom: solid;
   border-bottom-color: #f8f8f8;
   border-width: 1px;
 }
+
 .nav-menu-option:hover {
   color: #0c2259;
   background-color: #f8f8f8;
   border-color: #0c2259;
 }
-.nav-menu-option:hover:active{
+
+.nav-menu-option:hover:active {
   background-color: #e0e0e0;
 }
+
 @media (max-width: 767.99px) {
   #nav-links-container {
     display: none;
   }
+
   #nav-menu {
     display: block;
     float: right;

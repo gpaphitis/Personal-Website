@@ -5,10 +5,12 @@
   padding: 10px;
   margin-top: 100px;
 }
-#contact-section-container{
+
+#contact-section-container {
   /* Height of tallest block which is the form */
-  height:550px;
+  height: 550px;
 }
+
 .contact-block {
   /* Avoid margin collapse of title */
   margin-top: -1px;
@@ -17,9 +19,11 @@
   /* background-color: lightgray; */
   height: auto;
 }
+
 .contact-block:nth-child(2) {
   margin-left: 10px;
 }
+
 .contact-block-title {
   text-align: center;
   font-size: 1.5em;
@@ -28,24 +32,30 @@
   color: #0c2259;
   border-bottom: 1px solid #0c2259;
 }
+
 #form-elements {
   margin: 10px;
 }
+
 .form-input-header {
   color: #0c2259;
   font-size: 1.2em;
 }
-/* Leave bigger margin in between form fields  */
+
 .form-field:not(:first-child) {
+  /* Leave bigger margin in between form fields  */
   margin-top: 20px;
 }
+
 .form-input {
   font-size: 0.9em;
   width: 100%;
 }
+
 .form-input::placeholder {
   color: lightgray;
 }
+
 #form-submit {
   margin-bottom: 10px;
   width: 100px;
@@ -58,61 +68,80 @@
   transition: 0.12s ease-out;
   cursor: pointer;
 }
+
 #form-submit:hover {
   color: #d3d6de;
   background-color: #03194f;
 }
+
 #form-submit:active {
   background-color: #021136;
 }
-.form-required{
-  display:inline-block;
-  color:red;
-  position: relative; /* Needed to offset element from its original position */
-  top:5px; /* Offset from the top */
-  left:3px; /* Offset from the left */
-  height:15px; /* Height of * */
+
+.form-required {
+  display: inline-block;
+  color: red;
+  /* Needed to offset element from its original position */
+  position: relative;
+  /* Offset from the top */
+  top: 5px;
+  /* Offset from the left */
+  left: 3px;
+  /* Height of * */
+  height: 15px;
 }
+
 #sender-msg {
   height: 200px;
   /* Message exceeds shown text box */
   overflow: auto;
 }
-#sender-respond:invalid{
-  border:2px solid red;
-  
+
+#sender-respond:invalid {
+  border: 2px solid red;
+
 }
+
 .contact-info {
   margin-left: 10px;
 }
+
 .contact-info-block:not(:first-child) {
   margin-top: 30px;
 }
+
 .info-title {
   font-size: 1.2em;
   color: #0c2259;
 }
+
 /* Icon used in title */
-.info-title > svg {
-  margin-bottom: -1px; /* Helps line it up at the bottom ith the title */
+.info-title>svg {
+  margin-bottom: -1px;
+  /* Helps line it up at the bottom ith the title */
 }
+
 .info-link {
   width: fit-content;
   margin-top: 5px;
 }
+
 a.info-link {
   display: block;
   text-decoration: underline;
   color: #1e4fc9;
 }
+
 a.info-link:hover {
   color: #021136;
 }
+
 @media (min-width: 768px) {
   .contact-block {
     width: 48%;
   }
 }
+
 @media (max-width: 767.99px) {
   .contact-block {
     width: 100%;
@@ -120,14 +149,17 @@ a.info-link:hover {
     height: auto;
     margin-bottom: 10px;
   }
+
   .contact-block:nth-child(2) {
     margin-left: 0;
     margin-top: 40px;
   }
+
   #contact-me {
     height: auto;
   }
-  #contact-section-container{
-    height:auto;
+
+  #contact-section-container {
+    height: auto;
   }
 }

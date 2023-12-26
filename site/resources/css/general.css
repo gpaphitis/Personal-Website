@@ -1,29 +1,34 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-  background-color:#f8f8f8;
-  padding-bottom:40px;
+  background-color: #f8f8f8;
+  padding-bottom: 40px;
 }
-#page-content-wrapper{
+
+#page-content-wrapper {
   margin-top: 40px;
-  padding-top:1px;
-  height:auto;
+  padding-top: 1px;
+  height: auto;
 }
-.content-container{
-  margin-top:30px;
+
+.content-container {
+  margin-top: 30px;
 }
-.section-head{
+
+.section-head {
   font-size: 2em;
-  color:#0c2259;
+  color: #0c2259;
   font-weight: 550;
-  text-align:center;
+  text-align: center;
 }
-.emphasize{
-  color:#0c2259;
-  font-weight:550;
+
+.emphasize {
+  color: #0c2259;
+  font-weight: 550;
 }

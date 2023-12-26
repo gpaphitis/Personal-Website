@@ -1,21 +1,24 @@
 #header-container {
   height: 325px;
   font-size: 130%;
-  color:#0c2259;
-  margin-top:50px;
+  color: #0c2259;
+  margin-top: 50px;
 }
-#header-title{
+
+#header-title {
   font-size: 2.5em;
 }
+
 #header-dsc {
   font-size: 1.5em;
 }
+
 #header-content-container {
   /* Place it at the center of the picture */
   padding-top: 70px;
   float: left;
   width: 60%;
-  padding-right:20px;
+  padding-right: 20px;
 }
 
 #header-content {
@@ -24,7 +27,7 @@
 }
 
 #profile-container {
-  text-align:right;
+  text-align: right;
   float: left;
   /* Helps keep image not very far towards the right */
   padding-right: 5%;
@@ -32,23 +35,27 @@
 }
 
 @media (max-width: 768px) {
+
   /* Header container height is automatically set to the height of it's elements */
   #header-container {
     text-align: center;
     height: auto;
   }
+
   /* Place elements back in document flow. Helps align next section to the bottom of it */
   #header-content-container {
     float: none;
     padding: 0;
     width: 97%;
-    padding-left:10px;
+    padding-left: 10px;
   }
+
   #header-content {
     padding-left: 0;
   }
+
   #profile-container {
-    text-align:center;
+    text-align: center;
     float: none;
     width: 97%;
     padding-right: 0;

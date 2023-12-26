@@ -1,34 +1,42 @@
-#certifications{
+#certifications {
    font-size: 20px;
 }
-#cert-list{
-   margin-top:50px;
-   list-style:none;
-   padding-left:45px;
+
+#cert-list {
+   margin-top: 50px;
+   list-style: none;
+   padding-left: 45px;
 }
-.cert-link-header{
-   font-size:1.2em;
+
+.cert-link-header {
+   font-size: 1.2em;
 }
+
 /* Add my own bullet point before the actual content of the element(::before) */
-.cert-link-header::before{
-   content:"\2022"; /* CSS Code/unicode for a bullet */
-   color:#0c2259;
-   font-size:1.3em;
-   display:inline-block; /* Adds gap between bullet and text */
-   width:0.8em;
-   margin-left:-25px;
+.cert-link-header::before {
+   content: "\2022";
+   /* CSS Code/unicode for a bullet */
+   color: #0c2259;
+   font-size: 1.3em;
+   display: inline-block;
+   /* Adds gap between bullet and text */
+   width: 0.8em;
+   margin-left: -25px;
 }
-.cert-link{
-   display:block;
-   width:fit-content;
-   margin-top:5px;
-   text-decoration:underline;
-   color:#1e4fc9;
-   cursor:pointer;
+
+.cert-link {
+   display: block;
+   width: fit-content;
+   margin-top: 5px;
+   text-decoration: underline;
+   color: #1e4fc9;
+   cursor: pointer;
 }
-.cert-link:hover{
-   color:#021136;
+
+.cert-link:hover {
+   color: #021136;
 }
-.cert-list-elem:not(:first-child){
-   margin-top:50px;
+
+.cert-list-elem:not(:first-child) {
+   margin-top: 50px;
 }
