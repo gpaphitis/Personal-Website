@@ -50,6 +50,7 @@
 .form-input {
   font-size: 0.9em;
   width: 100%;
+  outline:0;
 }
 
 .form-input::placeholder {
@@ -134,6 +135,20 @@ a.info-link {
 
 a.info-link:hover {
   color: #021136;
+}
+
+.empty-error{
+  margin-bottom:0;
+  margin-top:5px;
+  color: red;
+  font-size:.8em;
+}
+.hidden{
+  display:none;
+}
+.message-subtext{
+  margin-top:5px;
+  font-size:1.1em;
 }
 
 @media (min-width: 768px) {

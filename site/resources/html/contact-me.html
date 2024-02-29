@@ -7,17 +7,22 @@
             <div class="form-field">
                <label for="sender-name" class="form-input-header">Name<span class="form-required">*</span></label>
                <input type="text" id="sender-name" class="form-input" placeholder="Enter your name">
+               <p class="empty-error hidden">Please enter your name</p>
             </div>
             <div class="form-field">
-               <label for="sender-respond" class="form-input-header">Where can I respond?<span class="form-required">*</span></label>
-               <input type="email" id="sender-respond" class="form-input"
-                  placeholder="Enter an email">
+               <label for="sender-respond" class="form-input-header">Where can I respond?<span
+                     class="form-required">*</span></label>
+               <input type="email" id="sender-respond" class="form-input" placeholder="Enter an email">
+               <p id="respond-error" class="empty-error hidden">Please enter a valid email address I can respond to.</p>
             </div>
             <div class="form-field">
                <label for="sender-msg" class="form-input-header">Message<span class="form-required">*</span></label>
                <!-- Allows multi line input -->
                <textarea type="text" id="sender-msg" class="form-input"></textarea>
+               <p class="text-empty-error empty-error hidden">Please enter a message</p>
             </div>
+            <p id="message-sent" class="message-subtext hidden">Message sent successfully!</p>
+            <p id="message-error" class="message-subtext hidden">Error occurred sending message.</p>
             <div class="form-field">
                <button id="form-submit">Send!</button>
             </div>
