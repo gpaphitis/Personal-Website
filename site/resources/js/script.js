@@ -2,8 +2,7 @@ const page = {
   Main: "main",
   Certificates: "Certificates",
 };
-const rootUrl='https://giorgospaphitis.com';
-// const rootUrl = 'http://localhost:5500';
+const rootUrl=window.location.origin;
 let currentPage = null;
 
 document.addEventListener("DOMContentLoaded", function ()
@@ -105,7 +104,7 @@ async function injectCertificates(certificates)
     let listItem = `<div class="cert-list-elem"><li class="cert-link-header">${cert["title"]}</li>`;
     // Some links do not have a url
     if (cert["url"] != "")
-      listItem += `<a class="cert-link" href="${cert["url"]}" target="_blank">${cert["url"]}</a>`;
+      listItem += `<a class="link cert-link" href="${cert["url"]}" target="_blank">${cert["url"]}</a>`;
     listItem += "</div>";
     document.querySelector("#cert-list").innerHTML += listItem;
     i++;

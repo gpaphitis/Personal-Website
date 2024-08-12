@@ -32,3 +32,12 @@ body {
   color: #0c2259;
   font-weight: 550;
 }
+.link{
+  color: #1e4fc9;
+  text-decoration: underline;
+  /* Makes element appear clickable */
+  cursor: pointer;
+}
+.link:hover{
+  color: #021136;
+}

@@ -33,15 +33,8 @@
   text-align: left;
 }
 
-#cert-link {
-  color: #1e4fc9;
-  text-decoration: underline;
-  /* Makes element appear clickable */
-  cursor: pointer;
-}
-
-#cert-link:hover {
-  color: #021136;
+#work-experience {
+  margin-top: 0;
 }
 
 @media (min-width: 992px) {

@@ -129,12 +129,6 @@
 
 a.info-link {
   display: block;
-  text-decoration: underline;
-  color: #1e4fc9;
-}
-
-a.info-link:hover {
-  color: #021136;
 }
 
 .empty-error{
