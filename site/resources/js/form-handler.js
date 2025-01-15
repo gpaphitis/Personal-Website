@@ -51,11 +51,13 @@
 
    function makeVisible(elem)
    {
-      elem.classList.remove('hidden');
+      if (elem.classList.contains('hidden'))
+         elem.classList.remove('hidden');
    }
    function makeInvisible(elem)
    {
-      elem.classList.add('hidden');
+      if (!elem.classList.contains('hidden'))
+         elem.classList.add('hidden');
    }
    formHandler.getFormValues = getFormValues;
    formHandler.isFormValid = isFormValid;

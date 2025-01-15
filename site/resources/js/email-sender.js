@@ -1,7 +1,7 @@
 (function (global)
 {
    let emailSender = {};
-   //* Sends email to me using EmailJS API
+   //^ Sends email to me using EmailJS API
    async function sendEmail(formValues)
    {
       if (formValues == null) return null;

@@ -2,7 +2,7 @@ const page = {
   Main: "main",
   Certificates: "Certificates",
 };
-const rootUrl=window.location.origin;
+const rootUrl = window.location.origin;
 let currentPage = null;
 
 document.addEventListener("DOMContentLoaded", function ()
@@ -64,6 +64,8 @@ async function loadHomePage()
     .getElementById("form-submit")
     .addEventListener("click", function (e)
     {
+      $formHandler.makeInvisible(document.querySelector('#message-sent'));
+      $formHandler.makeInvisible(document.querySelector('#message-error'));
       e.preventDefault();
       $emailSender.sendEmail($formHandler.getFormValues()).then((sent) =>
       {
@@ -102,9 +104,12 @@ async function injectCertificates(certificates)
   while (certificates.hasOwnProperty(`${i}`)) {
     let cert = certificates[`${i}`];
     let listItem = `<div class="cert-list-elem"><li class="cert-link-header">${cert["title"]}</li>`;
+    let url=cert["url"]
+    let alias=cert["alias"]
     // Some links do not have a url
-    if (cert["url"] != "")
-      listItem += `<a class="link cert-link" href="${cert["url"]}" target="_blank">${cert["url"]}</a>`;
+    if (url && url != "") {
+      listItem += `<a class="link cert-link" href="${url}" target="_blank">${(alias && alias != "")?alias:url}</a>`;
+    }
     listItem += "</div>";
     document.querySelector("#cert-list").innerHTML += listItem;
     i++;

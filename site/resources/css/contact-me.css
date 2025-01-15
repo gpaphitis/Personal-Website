@@ -131,10 +131,16 @@ a.info-link {
   display: block;
 }
 
-.empty-error{
+.error{
   margin-bottom:0;
   margin-top:5px;
   color: red;
+  font-size:.8em;
+}
+.success{
+  margin-bottom:0;
+  margin-top:5px;
+  color: green;
   font-size:.8em;
 }
 .hidden{
