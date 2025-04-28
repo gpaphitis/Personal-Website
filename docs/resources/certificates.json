@@ -1,21 +1,23 @@
 {
-  "1": {
-    "title": "Offensive Security and Ethical Hacking by Black Hat Ethical Hacking",
-    "url": "resources/pdfs/Offensive_Security_Ethical_Hacking_Course_Certificate_Giorgos_Paphitis.pdf",
-    "alias": "PDF"
-  },
-  "2": {
-    "title": "HTML, CSS, and JavaScript for Web Developers",
-    "url": "https://bit.ly/html-css-javascript-certification"
-  },
-  "3": {
-    "title": "Building Cloud Services with the Java Spring Framework",
-    "url": "https://bit.ly/java-spring-certificate"
-  },
-  "4": {
-    "title": "CCNA Routing and Switching: Introduction to Networks"
-  },
-  "5": {
-    "title": "CCNAv7: Switching, Routing and Wireless Essentials"
-  }
+   "1": {
+      "title": "Offensive Security and Ethical Hacking by Black Hat Ethical Hacking",
+      "url": "resources/pdfs/Offensive_Security_Ethical_Hacking_Course_Certificate_Giorgos_Paphitis.pdf",
+      "alias": "PDF"
+   },
+   "2": {
+      "title": "HTML, CSS, and JavaScript for Web Developers",
+      "url": "https://www.coursera.org/account/accomplishments/verify/F7P88FB4ZCZ9?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+      "alias": "Link to Certificate"
+   },
+   "3": {
+      "title": "Building Cloud Services with the Java Spring Framework",
+      "url": "https://www.coursera.org/account/accomplishments/verify/QMED2F9XQBMH?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+      "alias": "Link to Certificate"
+   },
+   "4": {
+      "title": "CCNA Routing and Switching: Introduction to Networks"
+   },
+   "5": {
+      "title": "CCNAv7: Switching, Routing and Wireless Essentials"
+   }
 }
