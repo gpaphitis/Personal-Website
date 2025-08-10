@@ -4,9 +4,18 @@
   height: auto;
   text-align: center;
   padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 0;
   margin-top: 100px;
+  background-color:#081a45;
+  color: #FFFFFF;
 }
+
+#about-me-header{
+  color: #B3D9FF;
+}
+
 
 .info-block {
   float: left;
@@ -31,6 +40,24 @@
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: left;
+}
+
+.personal-info-title{
+  color: #B3D9FF;
+  border-bottom-color: #B3D9FF;
+}
+
+.personal-info-link{
+  color: #66B2FF;
+}
+
+.personal-info-link:hover{
+  color: #99CCFF;
+}
+
+.emphasize {
+  color: #66B2FF;
+  font-weight: 600;
 }
 
 #work-experience {

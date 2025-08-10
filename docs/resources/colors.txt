@@ -3,8 +3,12 @@ Button background hover: #03194f
 Button text hover: #d3d6de
 Button background active: #021136
 Link: #1e4fc9
-Link hover: #021136
+Link hover: #5173ce
 White background(and hovering) and text: #f8f8f8
 White active background:#e0e0e0
 Red asterisk(required), invalid input: red
-Font weight: 550
+Emphasis Font weight: 600
+Alternate section background: #081a45
+Alternate header color: #B3D9FF
+Alternate link color: #66B2FF
+Alternate link color hover: #99CCFF

@@ -13,8 +13,8 @@ body {
 
 #page-content-wrapper {
   margin-top: 40px;
-  margin-left:20px;
-  margin-right:20px;
+  /* margin-left:20px;
+  margin-right:20px; */
   padding-top: 1px;
   height: auto;
 }
@@ -30,10 +30,6 @@ body {
   text-align: center;
 }
 
-.emphasize {
-  color: #0c2259;
-  font-weight: 550;
-}
 .link{
   color: #1e4fc9;
   text-decoration: underline;
@@ -41,5 +37,5 @@ body {
   cursor: pointer;
 }
 .link:hover{
-  color: #021136;
+  color: #5173ce;
 }
